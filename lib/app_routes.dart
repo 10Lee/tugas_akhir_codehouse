@@ -13,6 +13,7 @@ import 'package:tugas_akhir_stenly_rachmad/pages/home/homepage_binding.dart';
 import 'package:tugas_akhir_stenly_rachmad/pages/master_binding.dart';
 import 'package:tugas_akhir_stenly_rachmad/pages/splash/splash.dart';
 import 'package:tugas_akhir_stenly_rachmad/pages/masterpage.dart';
+import 'package:tugas_akhir_stenly_rachmad/pages/stats/stats%20copy.dart';
 import 'package:tugas_akhir_stenly_rachmad/pages/stats/stats_binding.dart';
 import 'package:tugas_akhir_stenly_rachmad/pages/transaction/detail_transaction_binding.dart';
 import 'package:tugas_akhir_stenly_rachmad/pages/transaction/detail_transaction_page.dart';
@@ -51,7 +52,7 @@ class AppRoutes {
     ),
     GetPage(
       name: statsRoute,
-      page: () => StatsPage(),
+      page: () => StatsCopy(),
       binding: StatsBinding(),
     ),
     GetPage(
