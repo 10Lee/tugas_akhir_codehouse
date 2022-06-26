@@ -59,6 +59,7 @@ class AuthController extends GetxController {
           password: passwordController.text,
         )
             .then((value) {
+          print("VALUE LOGIN : ${value.data!.email}");
           if (value.success!) {
             logger.i('RESPONSE DATA : ' + value.data.toString());
             box.write('auth', {

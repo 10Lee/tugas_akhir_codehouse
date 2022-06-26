@@ -31,10 +31,14 @@ class HomepageController extends GetxController {
 
           listOfAirsoft.value.addAll(value.data!.results!);
           isLoading.value = false;
+        } else {
+          logger.e("RESPONSE /AIRSOFT FAILE TO LOAD");
         }
       });
     } catch (error, stackTrace) {
       logger.e('registerHasError', error, stackTrace);
+      print(error.toString());
+      print(stackTrace.toString());
     }
   }
 

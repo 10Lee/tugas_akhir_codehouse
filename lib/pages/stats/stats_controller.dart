@@ -49,13 +49,18 @@ class StatsController extends GetxController {
             }).toList();
 
             isLoading.value = false;
+          } else {
+            logger.e("RESPONSE /TRANSACTION FAILED TO LOAD");
+            print('RESPONSE /TRANSACTION FAILED TO LOAD');
           }
+
           getTotalSpendingFromApi(listOfIds);
         },
       );
     } catch (e, stackTrace) {
-      logger.e(e.toString());
-      logger.e(stackTrace.toString());
+      logger.e('GetAllTransactionDataHasError', e, stackTrace);
+      print(e.toString());
+      print(stackTrace.toString());
     }
   }
 

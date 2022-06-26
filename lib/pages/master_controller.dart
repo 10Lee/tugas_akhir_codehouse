@@ -11,7 +11,7 @@ class MasterController extends GetxController {
   RxInt currentIndex = 0.obs;
   GetStorage box = GetStorage();
 
-  get userName => box.read('auth')['name'];
+  get userName => box.read('auth')['token'];
 
   List<Widget> pages = [const HomePage(), StatsPage()];
 

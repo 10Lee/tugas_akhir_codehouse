@@ -65,21 +65,28 @@ class Repository extends GetConnect {
         },
       );
       authRes = AuthModel.fromJson(response.body);
+      print("RESONSE LOGIN : ${response.body}");
+      return authRes;
     } catch (error, stackTrace) {
       logger.e('loginHasError', error, stackTrace);
+
+      throw Exception();
     }
-    return authRes!;
   }
 
   Future<AirsoftModel> getAirsoftList(int page) async {
-    late AirsoftModel airsoftModel;
+    // late AirsoftModel airsoftModel;
     try {
       final response = await get('/airsoft', query: {'page': '$page'});
-      airsoftModel = AirsoftModel.fromJson(response.body);
+      print("/AIRSOFT RESPONSE : ${response.body}");
+      return AirsoftModel.fromJson(response.body);
     } catch (error, stackTrace) {
       logger.e('getAirsoftListHasError', error, stackTrace);
+      print(error.toString());
+      print(stackTrace.toString());
+      throw Exception();
     }
-    return airsoftModel;
+    // return airsoftModel;
   }
 
   Future<AirsoftDetailModel> getAirsoftDetail(int id) async {
@@ -176,8 +183,9 @@ class Repository extends GetConnect {
       Response response = await get('/transaction', query: {'page': '$page'});
       listOfTransaction = Transaction.fromJson(response.body);
     } catch (e, stackTrace) {
-      logger.e(e.toString());
-      logger.e(stackTrace.toString());
+      logger.e('GetAllTransactionDataHasError', e, stackTrace);
+      print(e.toString());
+      print(stackTrace.toString());
     }
     return listOfTransaction;
   }

@@ -5,19 +5,19 @@ import 'package:get_storage/get_storage.dart';
 import 'package:tugas_akhir_stenly_rachmad/config/logger.dart';
 
 requestInterceptor(Request request) {
-  if (kDebugMode) {
-    var message = {
-      'REQUEST URL:': request.url,
-      'REQUEST HEADER:': request.headers,
-      'REQUEST METHOD:': request.method,
-      'REQUEST BODY': request.bodyBytes
-    };
-    if (GetStorage().hasData('auth')) {
-      request.headers["authorization"] =
-          "Bearer ${GetStorage().read('auth')['token']}";
-    }
-    logger.i(message);
+  var message = {
+    'REQUEST URL:': request.url,
+    'REQUEST HEADER:': request.headers,
+    'REQUEST METHOD:': request.method,
+    'REQUEST BODY': request.bodyBytes
+  };
+  if (GetStorage().hasData('auth')) {
+    request.headers["authorization"] =
+        "Bearer ${GetStorage().read('auth')['token']}";
+    print("STORAGE AUTH : ${GetStorage().read('auth')}");
   }
+  logger.i(message);
+
   return request;
 }
 
@@ -31,6 +31,6 @@ responseInterceptor(Request request, Response response) {
     'RESPONSE UNAUTHORIZED:': response.unauthorized,
   };
   logger.i(message);
-  GetStorage().write(request.url.toString(), response.body);
+  // GetStorage().write(request.url.toString(), response.body);
   return response;
 }
