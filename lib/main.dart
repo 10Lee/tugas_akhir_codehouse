@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get_storage/get_storage.dart';
 import 'config/flutter_config.dart';
 import 'global/constants.dart';
@@ -10,12 +9,12 @@ void main() async {
 
   await GetStorage.init();
 
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.light,
-    ),
-  );
+  // SystemChrome.setSystemUIOverlayStyle(
+  //   const SystemUiOverlayStyle(
+  //     statusBarColor: Colors.transparent,
+  //     statusBarIconBrightness: Brightness.light,
+  //   ),
+  // );
 
   FlavorConfig(
     flavor: Flavor.dev,

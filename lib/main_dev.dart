@@ -10,13 +10,6 @@ void main() async {
 
   await GetStorage.init();
 
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.light,
-    ),
-  );
-
   FlavorConfig(
     flavor: Flavor.dev,
     baseUrl: kDevBaseUrl,
