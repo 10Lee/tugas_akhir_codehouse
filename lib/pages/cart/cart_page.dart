@@ -96,8 +96,8 @@ class CartPage extends StatelessWidget {
                                                     .removeRecordFromCart(
                                                         cartData.id!),
                                                 child: Container(
-                                                  width: Dimensions.width12,
-                                                  height: Dimensions.height12,
+                                                  width: Dimensions.width20,
+                                                  height: Dimensions.height20,
                                                   decoration: BoxDecoration(
                                                     border: Border.all(
                                                       color: Colors.white,
@@ -170,8 +170,8 @@ class CartPage extends StatelessWidget {
                                       onTap: () => controller
                                           .increaseQtyOfItemInCart(cartData),
                                       child: Container(
-                                        width: 50.0,
-                                        height: 50.0,
+                                        width: Dimensions.width50,
+                                        height: Dimensions.height50,
                                         decoration: BoxDecoration(
                                             color: Colors.blue,
                                             borderRadius: BorderRadius.only(
