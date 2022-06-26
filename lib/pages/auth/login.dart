@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_animator/flutter_animator.dart';
+// import 'package:flutter_animator/flutter_animator.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:tugas_akhir_stenly_rachmad/config/dimensions.dart';
@@ -32,29 +32,29 @@ class LoginPage extends StatelessWidget {
                       width: Dimensions.imageWidth300),
                 ),
                 SizedBox(height: Dimensions.height40),
-                FadeInDown(
-                  preferences: const AnimationPreferences(
-                      duration: Duration(seconds: 1)),
-                  child: Center(
-                    child: Text(
-                      "Login",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: Dimensions.font22),
-                    ),
-                  ),
-                ),
-                SizedBox(height: Dimensions.height10),
-                FadeInDown(
-                  preferences: const AnimationPreferences(
-                    duration: Duration(seconds: 1),
-                  ),
+                // FadeInDown(
+                // preferences: const AnimationPreferences(
+                // duration: Duration(seconds: 1)),
+                Center(
                   child: Text(
-                    "Silahkan gunakan akun anda untuk login",
-                    style: TextStyle(fontSize: Dimensions.font18),
-                    textAlign: TextAlign.center,
+                    "Login",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: Dimensions.font22),
                   ),
                 ),
+                // ),
+                SizedBox(height: Dimensions.height10),
+                // FadeInDown(
+                //   preferences: const AnimationPreferences(
+                //     duration: Duration(seconds: 1),
+                //   ),
+                Text(
+                  "Silahkan gunakan akun anda untuk login",
+                  style: TextStyle(fontSize: Dimensions.font18),
+                  textAlign: TextAlign.center,
+                ),
+                // ),
                 SizedBox(height: Dimensions.height20),
                 RegularTextField(
                   textEditingController: controller.emailController,
@@ -68,31 +68,30 @@ class LoginPage extends StatelessWidget {
                   icon: Icon(Iconsax.key,
                       color: Colors.white, size: Dimensions.font18),
                 ),
-                FadeInUp(
-                  child: Container(
-                    margin:
-                        EdgeInsets.symmetric(horizontal: Dimensions.width150),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          controller.submitAccount(isLogin: true);
-                        }
-                      },
-                      child: const Text("Login"),
-                    ),
+                // FadeInUp(
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: Dimensions.width150),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        controller.submitAccount(isLogin: true);
+                      }
+                    },
+                    child: const Text("Login"),
                   ),
                 ),
-                FadeInUp(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text("Belum punya akun?"),
-                      TextButton(
-                          onPressed: () => Get.offAllNamed('/register'),
-                          child: const Text("Daftar yuk"))
-                    ],
-                  ),
+                // ),
+                // FadeInUp(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Belum punya akun?"),
+                    TextButton(
+                        onPressed: () => Get.offAllNamed('/register'),
+                        child: const Text("Daftar yuk"))
+                  ],
                 ),
+                // ),
                 SizedBox(height: Dimensions.height40),
               ],
             ),

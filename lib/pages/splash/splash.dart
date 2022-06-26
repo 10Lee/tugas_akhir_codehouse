@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_animator/flutter_animator.dart';
+// import 'package:flutter_animator/flutter_animator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:tugas_akhir_stenly_rachmad/config/dimensions.dart';
@@ -20,50 +20,45 @@ class SplashScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          FadeIn(
-            preferences:
-                const AnimationPreferences(duration: Duration(seconds: 5)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  // width: Dimensions.width100,
-                  width: Dimensions.width100,
-                  height: Dimensions.height100,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: Center(
-                    child: FaIcon(FontAwesomeIcons.gun,
-                        size: Dimensions.iconSize45),
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                // width: Dimensions.width100,
+                width: Dimensions.width100,
+                height: Dimensions.height100,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(50),
                 ),
-                SizedBox(width: Dimensions.width10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    RichText(
-                      text: TextSpan(
-                        style: TextStyle(
-                          fontSize: Dimensions.font30,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        children: const [
-                          TextSpan(text: 'Airsoft'),
-                          TextSpan(
-                              text: 'Fun',
-                              style: TextStyle(color: Colors.blue)),
-                        ],
+                child: Center(
+                  child:
+                      FaIcon(FontAwesomeIcons.gun, size: Dimensions.iconSize45),
+                ),
+              ),
+              SizedBox(width: Dimensions.width10),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        fontSize: Dimensions.font30,
+                        fontWeight: FontWeight.bold,
                       ),
+                      children: const [
+                        TextSpan(text: 'Airsoft'),
+                        TextSpan(
+                            text: 'Fun', style: TextStyle(color: Colors.blue)),
+                      ],
                     ),
-                    SizedBox(height: Dimensions.height5),
-                    const Text('Koleksi Airsoft kesukaanmu'),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                  SizedBox(height: Dimensions.height5),
+                  const Text('Koleksi Airsoft kesukaanmu'),
+                ],
+              ),
+            ],
           ),
           SizedBox(height: Dimensions.height20),
           Padding(

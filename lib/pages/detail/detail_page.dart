@@ -1,6 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animator/flutter_animator.dart';
+// import 'package:flutter_animator/flutter_animator.dart';
 import 'package:get/get.dart';
 import 'package:tugas_akhir_stenly_rachmad/app_routes.dart';
 import 'package:tugas_akhir_stenly_rachmad/config/dimensions.dart';
@@ -227,81 +227,77 @@ class DetailPage extends StatelessWidget {
 
   Widget _inCartMode(
       ResultsAirsoftModel cartInList, DetailController controller) {
-    return BounceInRight(
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              InkWell(
-                onTap: () {
-                  controller.decreaseQtyOfItemInCart(cartInList);
-                },
-                child: Container(
-                  width: Dimensions.width40,
-                  height: Dimensions.height30,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(Dimensions.radius30),
-                  ),
-                  child: const Icon(
-                    Icons.remove,
-                    color: Colors.black,
-                  ),
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+              onTap: () {
+                controller.decreaseQtyOfItemInCart(cartInList);
+              },
+              child: Container(
+                width: Dimensions.width40,
+                height: Dimensions.height30,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(Dimensions.radius30),
+                ),
+                child: const Icon(
+                  Icons.remove,
+                  color: Colors.black,
                 ),
               ),
-              const SizedBox(width: 5.0),
-              GetBuilder<DetailController>(
-                init: DetailController(),
-                builder: (_) {
-                  return Container(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: Dimensions.width10),
-                    height: 40.0,
-                    decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(Dimensions.radius30),
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 2.0,
-                        )),
-                    child: Center(
-                      child: Text(
-                        "${cartInList.qty} pcs",
-                        style: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
+            ),
+            const SizedBox(width: 5.0),
+            GetBuilder<DetailController>(
+              init: DetailController(),
+              builder: (_) {
+                return Container(
+                  padding: EdgeInsets.symmetric(horizontal: Dimensions.width10),
+                  height: 40.0,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(Dimensions.radius30),
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 2.0,
+                      )),
+                  child: Center(
+                    child: Text(
+                      "${cartInList.qty} pcs",
+                      style: const TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
-                  );
-                },
-              ),
-              const SizedBox(width: 5.0),
-              InkWell(
-                onTap: () => controller.increaseQtyOfItemInCart(cartInList),
-                child: Container(
-                  width: 40.0,
-                  height: 30.0,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(Dimensions.radius30),
                   ),
-                  child: const Icon(
-                    Icons.add,
-                    color: Colors.black,
-                  ),
+                );
+              },
+            ),
+            const SizedBox(width: 5.0),
+            InkWell(
+              onTap: () => controller.increaseQtyOfItemInCart(cartInList),
+              child: Container(
+                width: 40.0,
+                height: 30.0,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(Dimensions.radius30),
+                ),
+                child: const Icon(
+                  Icons.add,
+                  color: Colors.black,
                 ),
               ),
-            ],
-          ),
-          SizedBox(height: Dimensions.height20),
-          ElevatedButton.icon(
-            onPressed: () => controller.removeRecordFromCart(cartInList.id!),
-            style: ElevatedButton.styleFrom(primary: Colors.red),
-            label: const Text("Hapus dari keranjang"),
-            icon: const Icon(Icons.remove_shopping_cart),
-          ),
-        ],
-      ),
+            ),
+          ],
+        ),
+        SizedBox(height: Dimensions.height20),
+        ElevatedButton.icon(
+          onPressed: () => controller.removeRecordFromCart(cartInList.id!),
+          style: ElevatedButton.styleFrom(primary: Colors.red),
+          label: const Text("Hapus dari keranjang"),
+          icon: const Icon(Icons.remove_shopping_cart),
+        ),
+      ],
     );
   }
 }

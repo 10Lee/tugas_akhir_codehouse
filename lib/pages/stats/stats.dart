@@ -46,7 +46,7 @@ class StatsPage extends StatelessWidget {
                   if (index - 2 < controller.transactionList.length) {
                     // var transactionData = controller.transactionList.sort(
                     //     (item1, item2) => item2.date!.compareTo(item1.date!));
-                    // final transactionSorted = transactionData[index - 1];
+                    // final transactionSorted = transactionData[index];
 
                     final transaction = controller.transactionList[index - 1];
 
