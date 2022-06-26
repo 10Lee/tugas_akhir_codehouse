@@ -87,7 +87,7 @@ class AppRoutes {
     GetPage(
       name: cartRoute,
       page: () => CartPage(),
-      binding: CartBinding(),
+      bindings: [CartBinding(), StatsBinding()],
     ),
     GetPage(
       name: detailTransactionRoute,

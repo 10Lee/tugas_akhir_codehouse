@@ -7,6 +7,7 @@ import 'package:tugas_akhir_stenly_rachmad/models/get_api/cart_model.dart';
 import 'package:tugas_akhir_stenly_rachmad/models/get_api/result_airsoft_model.dart';
 import 'package:tugas_akhir_stenly_rachmad/models/post_api/add_transaction_model.dart';
 import 'package:tugas_akhir_stenly_rachmad/pages/home/homepage_controller.dart';
+import 'package:tugas_akhir_stenly_rachmad/pages/stats/stats_controller.dart';
 import 'package:tugas_akhir_stenly_rachmad/services/repository.dart';
 
 class CartController extends GetxController {
@@ -20,6 +21,7 @@ class CartController extends GetxController {
 
   Repository repo = Get.find<Repository>();
   HomepageController homepageController = Get.find<HomepageController>();
+  StatsController statsController = Get.find<StatsController>();
 
   void callDetailApi(int? id) {
     isLoading.value = true;
@@ -156,6 +158,7 @@ class CartController extends GetxController {
           box.write("items_cart", []);
           cart.clear();
           Get.offAllNamed(AppRoutes.masterRoute);
+          statsController.getAllTransactionData();
           Get.snackbar(
             'Selamat',
             'Transaksi berhasil dengan No, ${value.data!.transCode}',

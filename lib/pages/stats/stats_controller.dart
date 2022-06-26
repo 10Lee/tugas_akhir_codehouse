@@ -25,7 +25,6 @@ class StatsController extends GetxController {
   Repository repo = Get.find<Repository>();
 
   int page = 1;
-
   void getAllTransactionData() {
     isLoading.value = true;
     List<int> listOfIds = [];
