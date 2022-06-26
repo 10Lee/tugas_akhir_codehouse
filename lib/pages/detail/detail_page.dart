@@ -215,7 +215,7 @@ class DetailPage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: Dimensions.height20,
+                        height: Dimensions.height50,
                       ),
                     ],
                   ),
